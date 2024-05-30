@@ -13,7 +13,7 @@ Register-ArgumentCompleter -CommandName k -ScriptBlock $__kubectlCompleterBlock
 Set-Alias -Name docker -Value podman
 
 
-# Auto complete like linux
+# Linux like auto complete
 
 ### Shows navigable menu of all options when hitting Tab
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
