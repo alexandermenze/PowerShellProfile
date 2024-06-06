@@ -13,6 +13,9 @@ Register-ArgumentCompleter -CommandName k -ScriptBlock $__kubectlCompleterBlock
 Set-Alias -Name docker -Value podman
 
 
+# Alias l -> ls (linux like)
+Set-Alias -Name l -Value ls
+
 # Linux like auto complete
 
 ### Shows navigable menu of all options when hitting Tab
