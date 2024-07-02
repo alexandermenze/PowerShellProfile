@@ -24,3 +24,20 @@ Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 ### Autocompletion for arrow keys
 Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
+
+
+# Emulate the linux watch command
+function Watch-Command {
+    param (
+        [Parameter(Mandatory=$true, Position=0)]
+        [string]$Command,
+        [int]$Interval = 2
+    )
+
+    while ($true) {
+        Clear-Host
+        Invoke-Expression $Command
+        Start-Sleep -Seconds $Interval
+    }
+}
+
