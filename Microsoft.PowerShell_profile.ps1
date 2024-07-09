@@ -41,3 +41,19 @@ function Watch-Command {
     }
 }
 
+# Simple Base64 Encode / Decode
+function Encode-Base64 {
+    param (
+        [Parameter(Mandatory = $true)]
+        [string]$Text
+    )
+    [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($Text))
+}
+
+function Decode-Base64 {
+    param (
+        [Parameter(Mandatory = $true)]
+        [string]$Base64
+    )
+    [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String($Base64))
+}
